@@ -13,7 +13,10 @@ SECRET_KEY = '*si=wh4t6%08do-7@*@$m)h7!49+=f@_nb(%3-p5$buameyc9q'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '10.0.2.2', #needed for Android emulator
+    'localhost',
+]
 
 
 # Application definition
@@ -26,8 +29,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'Api.apps.ApiConfig',
-    'Tasks.apps.TasksConfig',
+    'api.apps.ApiConfig',
+    'tasks.apps.TasksConfig',
+
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -109,3 +114,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES':[
+        'rest_framework.permissions.AllowAny',
+    ]
+}

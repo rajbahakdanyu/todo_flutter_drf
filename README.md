@@ -1,2 +1,2 @@
 # Todo Flutter DRF
-Todo app made usinf Flutter and Django REST Framework
+Todo app made using Flutter and Django REST Framework
